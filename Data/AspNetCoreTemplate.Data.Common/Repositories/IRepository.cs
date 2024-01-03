@@ -1,4 +1,4 @@
-﻿namespace AspNetCoreTemplate.Data.Common.Repositories
+﻿namespace Blog.Data.Common.Repositories
 {
     using System;
     using System.Linq;

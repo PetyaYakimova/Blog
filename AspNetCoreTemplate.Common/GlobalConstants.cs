@@ -1,4 +1,4 @@
-﻿namespace AspNetCoreTemplate.Common
+﻿namespace Blog.Common
 {
     public static class GlobalConstants
     {

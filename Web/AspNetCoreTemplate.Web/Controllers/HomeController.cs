@@ -1,8 +1,8 @@
-﻿namespace AspNetCoreTemplate.Web.Controllers
+﻿namespace Blog.Web.Controllers
 {
     using System.Diagnostics;
 
-    using AspNetCoreTemplate.Web.ViewModels;
+    using Blog.Web.ViewModels;
 
     using Microsoft.AspNetCore.Mvc;
 

@@ -1,4 +1,4 @@
-﻿namespace AspNetCoreTemplate.Services.Mapping
+﻿namespace Blog.Services.Mapping
 {
     using AutoMapper;
 

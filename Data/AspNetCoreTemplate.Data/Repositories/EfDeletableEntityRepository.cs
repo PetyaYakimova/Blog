@@ -1,10 +1,10 @@
-﻿namespace AspNetCoreTemplate.Data.Repositories
+﻿namespace Blog.Data.Repositories
 {
     using System;
     using System.Linq;
 
-    using AspNetCoreTemplate.Data.Common.Models;
-    using AspNetCoreTemplate.Data.Common.Repositories;
+    using Blog.Data.Common.Models;
+    using Blog.Data.Common.Repositories;
 
     using Microsoft.EntityFrameworkCore;
 

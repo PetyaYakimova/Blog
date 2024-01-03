@@ -5,25 +5,25 @@ VisualStudioVersion = 17.5.33414.496
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{E389DEB6-5F90-444B-A054-12A10D39C76F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetCoreTemplate.Web", "Web\AspNetCoreTemplate.Web\AspNetCoreTemplate.Web.csproj", "{B90D1067-FE4C-400E-BA78-5413E30AB9ED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blog.Web", "Web\AspNetCoreTemplate.Web\Blog.Web.csproj", "{B90D1067-FE4C-400E-BA78-5413E30AB9ED}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{ACBE44C4-E198-45E2-BA02-6655250A0006}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetCoreTemplate.Data.Models", "Data\AspNetCoreTemplate.Data.Models\AspNetCoreTemplate.Data.Models.csproj", "{E9FDB52F-52DC-48B2-86E1-0176377BB53F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blog.Data.Models", "Data\AspNetCoreTemplate.Data.Models\Blog.Data.Models.csproj", "{E9FDB52F-52DC-48B2-86E1-0176377BB53F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{516E002B-9E6E-4456-B7F6-EAA353966DE6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetCoreTemplate.Data", "Data\AspNetCoreTemplate.Data\AspNetCoreTemplate.Data.csproj", "{4B844ECB-E845-49A6-8B31-85E577933598}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blog.Data", "Data\AspNetCoreTemplate.Data\Blog.Data.csproj", "{4B844ECB-E845-49A6-8B31-85E577933598}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetCoreTemplate.Data.Common", "Data\AspNetCoreTemplate.Data.Common\AspNetCoreTemplate.Data.Common.csproj", "{D0D59508-CF8B-4656-A344-396C530BB9DF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blog.Data.Common", "Data\AspNetCoreTemplate.Data.Common\Blog.Data.Common.csproj", "{D0D59508-CF8B-4656-A344-396C530BB9DF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetCoreTemplate.Common", "AspNetCoreTemplate.Common\AspNetCoreTemplate.Common.csproj", "{A2288C46-0FBF-43B6-80B6-3072FD65BC32}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blog.Common", "AspNetCoreTemplate.Common\Blog.Common.csproj", "{A2288C46-0FBF-43B6-80B6-3072FD65BC32}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetCoreTemplate.Services.Data", "Services\AspNetCoreTemplate.Services.Data\AspNetCoreTemplate.Services.Data.csproj", "{4D39C126-3FB5-4B26-B08C-1BF48EFFA23E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blog.Services.Data", "Services\AspNetCoreTemplate.Services.Data\Blog.Services.Data.csproj", "{4D39C126-3FB5-4B26-B08C-1BF48EFFA23E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetCoreTemplate.Services.Mapping", "Services\AspNetCoreTemplate.Services.Mapping\AspNetCoreTemplate.Services.Mapping.csproj", "{415FD7FA-0453-4FE1-9A29-C6E1D8B45C3D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blog.Services.Mapping", "Services\AspNetCoreTemplate.Services.Mapping\Blog.Services.Mapping.csproj", "{415FD7FA-0453-4FE1-9A29-C6E1D8B45C3D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetCoreTemplate.Web.ViewModels", "Web\AspNetCoreTemplate.Web.ViewModels\AspNetCoreTemplate.Web.ViewModels.csproj", "{13B7AACB-9C85-4409-8D4B-95A67D0DFFF7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blog.Web.ViewModels", "Web\AspNetCoreTemplate.Web.ViewModels\Blog.Web.ViewModels.csproj", "{13B7AACB-9C85-4409-8D4B-95A67D0DFFF7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

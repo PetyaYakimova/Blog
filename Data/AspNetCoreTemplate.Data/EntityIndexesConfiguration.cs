@@ -1,8 +1,8 @@
-﻿namespace AspNetCoreTemplate.Data
+﻿namespace Blog.Data
 {
     using System.Linq;
 
-    using AspNetCoreTemplate.Data.Common.Models;
+    using Blog.Data.Common.Models;
 
     using Microsoft.EntityFrameworkCore;
 

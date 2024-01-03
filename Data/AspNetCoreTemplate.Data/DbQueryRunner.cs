@@ -1,9 +1,9 @@
-﻿namespace AspNetCoreTemplate.Data
+﻿namespace Blog.Data
 {
     using System;
     using System.Threading.Tasks;
 
-    using AspNetCoreTemplate.Data.Common;
+    using Blog.Data.Common;
 
     using Microsoft.EntityFrameworkCore;
 

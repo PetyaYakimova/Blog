@@ -39,9 +39,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\AspNetCoreTemplate.Common\AspNetCoreTemplate.Common.csproj" />
-    <ProjectReference Include="..\AspNetCoreTemplate.Data.Common\AspNetCoreTemplate.Data.Common.csproj" />
-    <ProjectReference Include="..\AspNetCoreTemplate.Data.Models\AspNetCoreTemplate.Data.Models.csproj" />
+    <ProjectReference Include="..\..\AspNetCoreTemplate.Common\Blog.Common.csproj" />
+    <ProjectReference Include="..\AspNetCoreTemplate.Data.Common\Blog.Data.Common.csproj" />
+    <ProjectReference Include="..\AspNetCoreTemplate.Data.Models\Blog.Data.Models.csproj" />
   </ItemGroup>
 
   <ItemGroup>

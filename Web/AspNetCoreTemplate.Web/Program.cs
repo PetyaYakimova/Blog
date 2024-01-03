@@ -1,13 +1,13 @@
-﻿namespace AspNetCoreTemplate.Web
+﻿namespace Blog.Web
 {
     using System.Reflection;
 
-    using AspNetCoreTemplate.Data;
-    using AspNetCoreTemplate.Data.Common;
-    using AspNetCoreTemplate.Data.Common.Repositories;
-    using AspNetCoreTemplate.Data.Repositories;
-    using AspNetCoreTemplate.Services.Mapping;
-    using AspNetCoreTemplate.Web.ViewModels;
+    using Blog.Data;
+    using Blog.Data.Common;
+    using Blog.Data.Common.Repositories;
+    using Blog.Data.Repositories;
+    using Blog.Services.Mapping;
+    using Blog.Web.ViewModels;
 
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Http;

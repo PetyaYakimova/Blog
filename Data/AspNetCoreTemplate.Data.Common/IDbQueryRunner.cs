@@ -1,4 +1,4 @@
-﻿namespace AspNetCoreTemplate.Data.Common
+﻿namespace Blog.Data.Common
 {
     using System;
     using System.Threading.Tasks;

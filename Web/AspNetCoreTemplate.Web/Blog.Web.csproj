@@ -30,12 +30,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\AspNetCoreTemplate.Common\AspNetCoreTemplate.Common.csproj" />
-    <ProjectReference Include="..\..\Data\AspNetCoreTemplate.Data.Models\AspNetCoreTemplate.Data.Models.csproj" />
-    <ProjectReference Include="..\..\Data\AspNetCoreTemplate.Data\AspNetCoreTemplate.Data.csproj" />
-    <ProjectReference Include="..\..\Services\AspNetCoreTemplate.Services.Data\AspNetCoreTemplate.Services.Data.csproj" />
-    <ProjectReference Include="..\..\Services\AspNetCoreTemplate.Services.Mapping\AspNetCoreTemplate.Services.Mapping.csproj" />
-    <ProjectReference Include="..\AspNetCoreTemplate.Web.ViewModels\AspNetCoreTemplate.Web.ViewModels.csproj" />
+    <ProjectReference Include="..\..\AspNetCoreTemplate.Common\Blog.Common.csproj" />
+    <ProjectReference Include="..\..\Data\AspNetCoreTemplate.Data.Models\Blog.Data.Models.csproj" />
+    <ProjectReference Include="..\..\Data\AspNetCoreTemplate.Data\Blog.Data.csproj" />
+    <ProjectReference Include="..\..\Services\AspNetCoreTemplate.Services.Data\Blog.Services.Data.csproj" />
+    <ProjectReference Include="..\..\Services\AspNetCoreTemplate.Services.Mapping\Blog.Services.Mapping.csproj" />
+    <ProjectReference Include="..\AspNetCoreTemplate.Web.ViewModels\Blog.Web.ViewModels.csproj" />
   </ItemGroup>
 
   <ItemGroup>

@@ -1,4 +1,4 @@
-﻿namespace AspNetCoreTemplate.Data
+﻿namespace Blog.Data
 {
     using System;
     using System.Linq;
@@ -6,7 +6,8 @@
     using System.Threading;
     using System.Threading.Tasks;
 
-    using AspNetCoreTemplate.Data.Common.Models;
+    using Blog.Data.Common.Models;
+    using Blog.Data.Models;
 
     using Microsoft.EntityFrameworkCore;
 
@@ -21,6 +22,10 @@
             : base(options)
         {
         }
+
+        public DbSet<Article> Articles { get; set; }
+
+        public DbSet<ApplicationUser> ApplicationUsers { get; set; }
 
         public override int SaveChanges() => this.SaveChanges(true);
 

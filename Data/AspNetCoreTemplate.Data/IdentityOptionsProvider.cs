@@ -1,4 +1,4 @@
-﻿namespace AspNetCoreTemplate.Data
+﻿namespace Blog.Data
 {
     using Microsoft.AspNetCore.Identity;
 
