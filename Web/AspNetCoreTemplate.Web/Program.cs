@@ -7,6 +7,7 @@
     using Blog.Data.Common.Repositories;
     using Blog.Data.Models;
     using Blog.Data.Repositories;
+    using Blog.Services.Data;
     using Blog.Services.Mapping;
     using Blog.Web.ViewModels;
 
@@ -59,6 +60,9 @@
             services.AddScoped(typeof(IDeletableEntityRepository<>), typeof(EfDeletableEntityRepository<>));
             services.AddScoped(typeof(IRepository<>), typeof(EfRepository<>));
             services.AddScoped<IDbQueryRunner, DbQueryRunner>();
+
+            //Application services
+            services.AddTransient<IGenreService, GenreService>();
         }
 
         private static void Configure(WebApplication app)

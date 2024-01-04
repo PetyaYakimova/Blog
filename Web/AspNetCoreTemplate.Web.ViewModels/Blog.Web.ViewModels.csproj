@@ -19,6 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\AspNetCoreTemplate.Common\Blog.Common.csproj" />
     <ProjectReference Include="..\..\Data\AspNetCoreTemplate.Data.Models\Blog.Data.Models.csproj" />
     <ProjectReference Include="..\..\Services\AspNetCoreTemplate.Services.Mapping\Blog.Services.Mapping.csproj" />
   </ItemGroup>
