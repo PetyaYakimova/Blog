@@ -6,6 +6,8 @@
 
     using Blog.Data.Common.Validation;
 
+    using Microsoft.AspNetCore.Identity;
+
     public class ApplicationUser
     {
         public ApplicationUser()

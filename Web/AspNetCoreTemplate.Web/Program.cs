@@ -5,6 +5,7 @@
     using Blog.Data;
     using Blog.Data.Common;
     using Blog.Data.Common.Repositories;
+    using Blog.Data.Models;
     using Blog.Data.Repositories;
     using Blog.Services.Mapping;
     using Blog.Web.ViewModels;
