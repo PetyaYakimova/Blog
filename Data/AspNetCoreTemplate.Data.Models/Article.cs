@@ -25,6 +25,12 @@
         [ForeignKey(nameof(Author))]
         public string AuthorId { get; set; } = null!;
 
-        public ApplicationUser Author { get; set; }
+        public virtual ApplicationUser Author { get; set; }
+
+        [Required]
+        [ForeignKey(nameof(Genre))]
+        public int GenreId { get; set; }
+
+        public virtual Genre Genre { get; set; }
     }
 }
