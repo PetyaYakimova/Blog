@@ -13,5 +13,7 @@
         Task<bool> UsernameExistsAsync(string username);
 
         Task<bool> EmailExistsAsync(string email);
+
+        Task<bool> ValidateLoginInfoAsync(LoginInputModel inputModel);
     }
 }

@@ -1,8 +1,9 @@
 ﻿namespace Blog.Controllers
 {
+    using System.Text;
     using System.Threading.Tasks;
-    using Blog.Services.Data;
 
+    using Blog.Services.Data;
     //using Blog.Infrastructure.Models;
     using Blog.Web.ViewModels.ApplicationUser;
     //using Blog.Core.Models.User;
@@ -63,35 +64,38 @@
             return View(new LoginInputModel());
         }
 
-        //[HttpPost]
-        //[AllowAnonymous]
-        //public async Task<IActionResult> Login(LoginViewModel model)
-        //{
-        //    if (!ModelState.IsValid)
-        //    {
-        //        return View(model);
-        //    }
+        [HttpPost]
+        public async Task<IActionResult> Login(LoginInputModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
 
-        //    var user = await userManager.FindByNameAsync(model.UserName);
+            string userId = await this.userService.GetIdByUsernameAsync(model.Username);
 
-        //    if (user != null)
-        //    {
-        //        var result = await signInManager.PasswordSignInAsync(user, model.Password, false, false);
+            if (userId == null)
+            {
+                ModelState.AddModelError("Username", "Invalid username!");
+                return this.View(model);
+            }
 
-        //        if (result.Succeeded)
-        //        {
-        //            return RedirectToAction("All", "Article");
-        //        }
-        //    }
+            bool isLoggedIn = await this.userService.ValidateLoginInfoAsync(model);
 
-        //    ModelState.AddModelError("", "Invalid login");
+            if (!isLoggedIn)
+            {
+                ModelState.AddModelError("Password", "Invalid password!");
+                return this.View(model);
+            }
 
-        //    return View(model);
-        //}
+            HttpContext.Session.Set("userId", Encoding.UTF8.GetBytes(userId));
+
+            return this.RedirectToAction("Index", "Home");
+        }
 
         public async Task<IActionResult> Logout()
         {
-            //await signInManager.SignOutAsync();
+            HttpContext.Session.Clear();
 
             return RedirectToAction("Index", "Home");
         }

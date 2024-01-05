@@ -1,5 +1,6 @@
 ﻿namespace Blog.Web
 {
+    using System;
     using System.Reflection;
 
     using Blog.Data;
@@ -14,6 +15,7 @@
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Http;
     using Microsoft.AspNetCore.Mvc;
+    using Microsoft.AspNetCore.Session;
     using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
@@ -56,6 +58,16 @@
 
             services.AddSingleton(configuration);
 
+            //Configure session
+            services.AddDistributedMemoryCache();
+            services.AddSession(opt =>
+            {
+                opt.IdleTimeout = TimeSpan.FromDays(5);
+                opt.Cookie.HttpOnly = true;
+                opt.Cookie.IsEssential = true;
+                opt.Cookie.Name = "LoginSession";
+            });
+
             // Data repositories
             services.AddScoped(typeof(IDeletableEntityRepository<>), typeof(EfDeletableEntityRepository<>));
             services.AddScoped(typeof(IRepository<>), typeof(EfRepository<>));
@@ -97,6 +109,8 @@
 
             app.UseAuthentication();
             app.UseAuthorization();
+
+            app.UseSession();
 
             app.MapControllerRoute("areaRoute", "{area:exists}/{controller=Home}/{action=Index}/{id?}");
             app.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");

@@ -47,15 +47,25 @@
         {
             ApplicationUser user = await this.userRepository
                 .AllAsNoTracking()
-                .FirstAsync(u => u.Username == username);
+                .FirstOrDefaultAsync(u => u.Username == username);
 
-            return user.Id;
+            return user?.Id;
         }
 
         public async Task<bool> UsernameExistsAsync(string username)
             => await this.userRepository
                 .AllAsNoTracking()
                 .AnyAsync(u => u.Username == username);
+
+        public async Task<bool> ValidateLoginInfoAsync(LoginInputModel inputModel)
+        {
+            ApplicationUser user = await this.userRepository
+                 .AllAsNoTracking()
+                 .FirstAsync(u => u.Username == inputModel.Username);
+
+            string hashedPassword = this.ComputeSha256Hash(inputModel.Password, user.PasswordSalt);
+            return hashedPassword == user.Password;
+        }
 
         private string ComputeSha256Hash(string rawData, string salt)
         {
