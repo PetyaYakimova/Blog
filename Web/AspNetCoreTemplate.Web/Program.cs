@@ -68,6 +68,8 @@
                 opt.Cookie.Name = "LoginSession";
             });
 
+            services.AddHttpContextAccessor();
+
             // Data repositories
             services.AddScoped(typeof(IDeletableEntityRepository<>), typeof(EfDeletableEntityRepository<>));
             services.AddScoped(typeof(IRepository<>), typeof(EfRepository<>));

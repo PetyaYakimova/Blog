@@ -4,16 +4,10 @@
     using System.Threading.Tasks;
 
     using Blog.Services.Data;
-    //using Blog.Infrastructure.Models;
     using Blog.Web.ViewModels.ApplicationUser;
-    //using Blog.Core.Models.User;
 
-    using Microsoft.AspNetCore.Authorization;
-    using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
-    using Microsoft.EntityFrameworkCore.Migrations.Internal;
 
-    //[Authorize]
     public class ApplicationUserController : Controller
     {
         private readonly IApplicationUserService userService;
@@ -24,14 +18,12 @@
         }
 
         [HttpGet]
-        //[AllowAnonymous]
         public IActionResult Register()
         {
             return this.View(new RegisterUserInputModel());
         }
 
         [HttpPost]
-        //[AllowAnonymous]
         public async Task<IActionResult> Register(RegisterUserInputModel model)
         {
             if (!ModelState.IsValid)
@@ -58,7 +50,6 @@
         }
 
         [HttpGet]
-        [AllowAnonymous]
         public IActionResult Login()
         {
             return View(new LoginInputModel());
@@ -93,11 +84,12 @@
             return this.RedirectToAction("Index", "Home");
         }
 
-        public async Task<IActionResult> Logout()
+		[HttpPost]
+		public async Task<IActionResult> Logout()
         {
             HttpContext.Session.Clear();
 
-            return RedirectToAction("Index", "Home");
+            return this.RedirectToAction("Index", "Home");
         }
     }
 }
