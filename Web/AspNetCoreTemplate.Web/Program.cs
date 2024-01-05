@@ -63,6 +63,7 @@
 
             //Application services
             services.AddTransient<IGenreService, GenreService>();
+            services.AddTransient<IApplicationUserService, ApplicationUserService>();
         }
 
         private static void Configure(WebApplication app)

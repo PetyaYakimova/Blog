@@ -1,67 +1,66 @@
-﻿//using Blog.Infrastructure.Models;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
-//using Blog.Core.Models.User;
-using System.Threading.Tasks;
-
-namespace Blog.Controllers
+﻿namespace Blog.Controllers
 {
-    [Authorize]
+    using System.Threading.Tasks;
+    using Blog.Services.Data;
+
+    //using Blog.Infrastructure.Models;
+    using Blog.Web.ViewModels.ApplicationUser;
+    //using Blog.Core.Models.User;
+
+    using Microsoft.AspNetCore.Authorization;
+    using Microsoft.AspNetCore.Identity;
+    using Microsoft.AspNetCore.Mvc;
+    using Microsoft.EntityFrameworkCore.Migrations.Internal;
+
+    //[Authorize]
     public class ApplicationUserController : Controller
     {
-        //private readonly UserManager<ApplicationUser> userManager;
+        private readonly IApplicationUserService userService;
 
-        //private readonly SignInManager<ApplicationUser> signInManager;
-
-        public ApplicationUserController()
+        public ApplicationUserController(IApplicationUserService userService)
         {
-            //userManager = _userManager;
-            //signInManager = _signInManager;
+            this.userService = userService;
         }
 
         [HttpGet]
-        [AllowAnonymous]
+        //[AllowAnonymous]
         public IActionResult Register()
         {
-            return this.View();
+            return this.View(new RegisterUserInputModel());
         }
 
-        //[HttpPost]
+        [HttpPost]
         //[AllowAnonymous]
-        //public async Task<IActionResult> Register(RegisterViewModel model)
-        //{
-        //    if (!ModelState.IsValid)
-        //    {
-        //        return View(model);
-        //    }
+        public async Task<IActionResult> Register(RegisterUserInputModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
 
-        //    var user = new ApplicationUser()
-        //    {
-        //        Email = model.Email,
-        //        UserName = model.UserName
-        //    };
+            bool usernameOrEmailTaken = await this.userService.UsernameExistsAsync(model.Username) ||
+                                        await this.userService.EmailExistsAsync(model.Email);
 
-        //    var result = await userManager.CreateAsync(user, model.Password);
+            if (usernameOrEmailTaken)
+            {
+                return this.RedirectToAction("Login");
+            }
 
-        //    if (result.Succeeded)
-        //    {
-        //        return RedirectToAction("Login", "ApplicationUser");
-        //    }
+            if (model.Password != model.PasswordConfirmation)
+            {
+                return this.View(model);
+            }
 
-        //    foreach (var item in result.Errors)
-        //    {
-        //        ModelState.AddModelError("", item.Description);
-        //    }
+            await this.userService.CreateUserAsync(model);
 
-        //    return View(model);
-        //}
+            return this.RedirectToAction("Login");
+        }
 
         [HttpGet]
         [AllowAnonymous]
         public IActionResult Login()
         {
-            return View();
+            return View(new LoginInputModel());
         }
 
         //[HttpPost]
