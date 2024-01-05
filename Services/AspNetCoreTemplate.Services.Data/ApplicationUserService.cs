@@ -25,7 +25,7 @@
             string passwordSalt = this.GenerateSalt();
             string hashedPassword = this.ComputeSha256Hash(inputModel.Password, passwordSalt);
 
-            // In the service we assume that we have a valid input model
+            //In the service we assume that we have a valid input model
             ApplicationUser user = new ApplicationUser()
             {
                 Username = inputModel.Username,
